@@ -68,3 +68,16 @@ export async function getCategories() {
 
   return res.json();
 }
+
+export async function getRelatedPosts(categoryIds: number[], excludePostId: number, limit = 4) {
+  const res = await fetch(
+    `${WP_API_URL}/posts?categories=${categoryIds.join(',')}&exclude=${excludePostId}&per_page=${limit}&_embed`,
+    { next: { revalidate: 3600 } }
+  );
+
+  if (!res.ok) {
+    return [];
+  }
+
+  return res.json();
+}
