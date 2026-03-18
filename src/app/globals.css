@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #4ea88a;
+  --color-primary-dark: #3d8f74;
+  --color-secondary: #09231a;
+  --color-accent: #09231a;
+  --font-sans: var(--font-poppins), system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --background: #f6fbf9;
+  --foreground: #3d3d3d;
+  --card-bg: #ffffff;
+  --card-border: rgba(78, 168, 138, 0.1);
+  --glass-effect: none;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold tracking-tight;
+  color: #09231a;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(78, 168, 138, 0.1);
+  border-color: var(--color-primary);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #4ea88a 0%, #09231a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button-primary {
+  @apply px-8 py-3 rounded-md font-bold transition-all duration-300;
+  background: #4ea88a;
+  color: white;
+  box-shadow: 0 4px 15px rgba(78, 168, 138, 0.2);
+}
+
+.button-primary:hover {
+  background: #3d8f74;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(78, 168, 138, 0.4);
+}
+
+/* Custom Typography for Content */
+.wp-content img {
+  border-radius: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.wp-content p {
+  margin-bottom: 2rem;
+  line-height: 1.9;
+  font-size: 1.25rem;
+  color: #4b5563;
+}
+
+.wp-content h2 {
+  font-size: 2.5rem;
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: #09231a;
+}
+
+/* Base styles for the layout */
+.layout-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
