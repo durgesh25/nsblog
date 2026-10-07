@@ -65,10 +65,10 @@ export default async function PostPage({ params }: { params: { slug: string } })
   });
 
   return (
-    <main className="min-h-screen pt-32 pb-24">
+    <>
       <Navbar />
-
-      <article className="layout-container max-w-4xl mb-32">
+      <main className="min-h-screen pt-32 pb-24">
+        <article className="layout-container max-w-4xl mb-32">
         <header className="mb-12 text-center">
           <div className="flex gap-4 justify-center items-center text-[10px] font-black text-primary tracking-widest uppercase mb-6">
             <span>Case Study #{post.id}</span>
@@ -143,8 +143,8 @@ export default async function PostPage({ params }: { params: { slug: string } })
           </div>
         </section>
       )}
-
-      <Footer />
     </main>
+    <Footer />
+  </>
   );
 }

@@ -25,10 +25,10 @@ export default async function CategoryPage({
   const { posts, totalPages } = await getPostsByCategory(category.id, page, 12);
 
   return (
-    <main className="min-h-screen pt-32 pb-24">
+    <>
       <Navbar />
-
-      <div className="layout-container">
+      <main className="min-h-screen pt-32 pb-24">
+        <div className="layout-container">
         {/* Category Header */}
         <header className="mb-20 text-center">
           <div className="inline-block px-4 py-1.5 mb-6 bg-[#4ea88a1a] rounded-full text-[10px] font-black text-primary tracking-widest uppercase">
@@ -60,8 +60,8 @@ export default async function CategoryPage({
         {/* Pagination */}
         <Pagination currentPage={page} totalPages={totalPages} baseUrl={`/category/${slug}`} />
       </div>
-
-      <Footer />
     </main>
+    <Footer />
+  </>
   );
 }

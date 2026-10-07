@@ -11,6 +11,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Novostack Blog | Headless WordPress",
   description: "Official blog for Novostack, built with Next.js and Headless WordPress.",
+  icons: {
+    icon: 'https://novostack.com/img/brand-logo.png', // Main favicon
+    shortcut: 'https://novostack.com/img/brand-logo.png',
+    apple: 'https://novostack.com/img/brand-logo.png',
+  },
 };
 
 export default function RootLayout({

@@ -12,10 +12,10 @@ export default async function Home({ searchParams }: { searchParams: { page?: st
   const categories = await getCategories();
 
   return (
-    <main className="min-h-screen pt-32 pb-24">
+    <>
       <Navbar />
-
-      <div className="layout-container">
+      <main className="min-h-screen pt-32 pb-24">
+        <div className="layout-container">
         {/* Hero Section (Only show on first page) */}
         {page === 1 && (
           <>
@@ -85,8 +85,8 @@ export default async function Home({ searchParams }: { searchParams: { page?: st
           </section>
         )}
       </div>
-
-      <Footer />
     </main>
+    <Footer />
+  </>
   );
 }
